@@ -20,7 +20,7 @@ yarn add @0devco/chart
 ```js
 /* import @0devco/chart */
 import chart from '@0devco/chart'
-/* chart component */
+
 let barChart = {
   /* main rules */
 
