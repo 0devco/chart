@@ -2,18 +2,18 @@
 module.exports = function setup(chartEl) {
   /* import  chart js */
   let Chart = require('chart.js')
-/* chartEl data access by variable */
-let datasetsArray = []
-for (let i = 0; i < chartEl.multiple ; i++) {
-  let dataSet = {
-    label: chartEl.label[i],
-    data: chartEl.data[i],
-    backgroundColor: chartEl.bgColor[i],
-    borderColor: chartEl.bdrColor[i],
-    borderWidth: chartEl.bdrWidth[i],
+  /* chartEl data access by variable */
+  let datasetsArray = []
+  for (let i = 0; i < chartEl.multiple ; i++) {
+    let dataSet = {
+      label: chartEl.label[i],
+      data: chartEl.data[i],
+      backgroundColor: chartEl.bgColor[i],
+      borderColor: chartEl.bdrColor[i],
+      borderWidth: chartEl.bdrWidth[i],
+    }
+    datasetsArray.push(dataSet)
   }
-  datasetsArray.push(dataSet)
-}
 
 
   /* create chart */
@@ -41,7 +41,7 @@ for (let i = 0; i < chartEl.multiple ; i++) {
           gridLines: {
             display: true,
             drawBorder: true,
-	    drawOnChartArea: false,
+	          drawOnChartArea: false,
             position: 'bottom'
           },
           ticks: {},
@@ -49,14 +49,13 @@ for (let i = 0; i < chartEl.multiple ; i++) {
         yAxes: [{
           gridLines: {
             display: true,
-	    drawBorder: true,
-	    drawOnChartArea: false,
+	          drawBorder: true,
+	          drawOnChartArea: false,
             position: 'left'
           },
           ticks: {},
         }]
       }
     }
-
   })
 };
