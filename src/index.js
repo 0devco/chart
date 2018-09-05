@@ -1,16 +1,13 @@
 'use strict';
 
 function Collection(collection) {
-  console.log(collection)
+  console.log(collection);
 }
 
-
 Collection.prototype.setup = require('./setup');
-var charts = function collect(collection) {
+var chart = function collect(collection) {
   return new Collection(collection);
 };
 
-
-
-module.exports = charts;
-module.exports.default = charts;
+module.exports = chart;
+module.exports.default = chart;
