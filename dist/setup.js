@@ -15,6 +15,13 @@ module.exports = function setup(chartEl) {
     };
     datasetsArray.push(dataSet);
   }
+  let is_animated =  (chartEl.animated === false) ? 0 : 1500
+  let is_title = chartEl.title ? true : false
+  let is_legend = (chartEl.legend === false) ? false : true
+  let is_drawOnChartArea = (chartEl.drawOnChartArea === false) ? false :true
+  let is_tooltips = (chartEl.tooltips === false) ? false : true
+  let is_BeginZeroY = (chartEl.beginZeroY === true) ? true : false
+  let is_BeginZeroX = (chartEl.beginZeroX === true) ? true : false
 
   /* create chart */
   var chartID = document.getElementById(chartEl.id);
@@ -30,30 +37,40 @@ module.exports = function setup(chartEl) {
     options: {
       responsive: true,
       legend: {
-        display: true
+        display: is_legend
       },
       title: {
-        display: true,
-        text: 'This is title'
+        display: is_title,
+        text: chartEl.title
+      },
+      tooltips: {
+        enabled: is_tooltips
+      },
+      animation: {
+        duration: is_animated
       },
       scales: {
         xAxes: [{
           gridLines: {
             display: true,
             drawBorder: true,
-            drawOnChartArea: false,
+            drawOnChartArea: is_drawOnChartArea,
             position: 'bottom'
           },
-          ticks: {}
+          ticks: {
+            beginAtZero: is_BeginZeroX
+          }
         }],
         yAxes: [{
           gridLines: {
             display: true,
             drawBorder: true,
-            drawOnChartArea: false,
+            drawOnChartArea: is_drawOnChartArea,
             position: 'left'
           },
-          ticks: {}
+          ticks: {
+            beginAtZero: is_BeginZeroY
+          }
         }]
       }
     }
