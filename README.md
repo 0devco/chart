@@ -20,5 +20,5 @@ let barChart = {
   bdrWidth:[6]
 }
 /* call function */
-chart().setup(chartEl)
+chart().setup(barChart )
 ```
