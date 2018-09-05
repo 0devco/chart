@@ -1,5 +1,15 @@
 <p align="center" ><img src="https://raw.githubusercontent.com/0devco/chart/master/0devco-chart.png"></p>
 
+# install
+
+```bash
+# npm
+npm -i @0devco/chart 
+# yarn
+yarn add @0devco/chart
+
+```
+
 # implementation
 
 ```js
