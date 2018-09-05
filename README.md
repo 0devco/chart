@@ -9,25 +9,15 @@ JavaScript charting with @chartjs 0devco
 import chart from '@0devco/chart'
 /* chart component */
 let barChart = {
-  id: 'bar-chart',
-  type: 'bar',
+  type:'pie',
+  id: 'barChart',
   multiple: 1,
-  labels: [
-    ["1",'2','3','4','5']
-  ],
-  label: [
-    'one step'
-  ],
-  data: [
-    [20,30,40,50,60]
-  ],
-  bgColor:[
-    ['red','green','blue','blue','red']
-  ],
-  bdrColor:[
-    ['green']
-  ],
-  bdrWidth: 1
+  labels:['one','two','three'],
+  label:[['one step']],
+  data:[[54,13,15]],
+  bgColor:[['red','green','blue']],
+  bdrColor:[['black','black','black']],
+  bdrWidth:[6]
 }
 /* call function */
 chart().setup(chartEl)
