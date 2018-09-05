@@ -38,10 +38,12 @@ id: 'canvas_id',
 type: 'chart_type',
 multiple: 2 /* multi chart n */
 labels: array
+fill: multi array according  (multiple n) ex => [true,false]
 label: multi array according  (multiple n)
 data: multi array according  (multiple n)
 bgColor: multi array according  (multiple n)
 bdrColor: multi array according  (multiple n)
+bdrDash: [0,0] multi array according  (multiple n)
 ```
 
 # extra rules
@@ -50,12 +52,15 @@ bdrColor: multi array according  (multiple n)
 animated: false,
 title: "title name",
 legend: false,
+legendPosition:  /* top bottom left right */
 drawOnChartArea: false,
 tooltips: false,
 beginZeroX: true,
 beginZeroY: true,
 hideX: true,
-hideY: true
+hideY: true,
+stackX: true,
+stackY: true
 ```
 
 

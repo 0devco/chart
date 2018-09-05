@@ -8,7 +8,9 @@ module.exports = function setup(chartEl) {
   for (var i = 0; i < chartEl.multiple; i++) {
     var dataSet = {
       label: chartEl.label[i],
+      fill: chartEl.fill[i],
       data: chartEl.data[i],
+      borderDash: [chartEl.bdrDash[i]],
       backgroundColor: chartEl.bgColor[i],
       borderColor: chartEl.bdrColor[i],
       borderWidth: chartEl.bdrWidth[i]
@@ -22,6 +24,8 @@ module.exports = function setup(chartEl) {
   let is_tooltips = (chartEl.tooltips === false) ? false : true
   let is_BeginZeroY = (chartEl.beginZeroY === true) ? true : false
   let is_BeginZeroX = (chartEl.beginZeroX === true) ? true : false
+  let is_hideX = (chartEl.hideX === true) ? false : true
+  let is_hideY = (chartEl.hideY === true) ? false : true
 
   /* create chart */
   var chartID = document.getElementById(chartEl.id);
@@ -37,7 +41,8 @@ module.exports = function setup(chartEl) {
     options: {
       responsive: true,
       legend: {
-        display: is_legend
+        display: is_legend,
+        position: chartEl.legendPosition || 'top'
       },
       title: {
         display: is_title,
@@ -51,25 +56,29 @@ module.exports = function setup(chartEl) {
       },
       scales: {
         xAxes: [{
+          stacked: chartEl.stackX || false,
           gridLines: {
             display: true,
-            drawBorder: true,
+            drawBorder: is_hideX,
             drawOnChartArea: is_drawOnChartArea,
             position: 'bottom'
           },
           ticks: {
-            beginAtZero: is_BeginZeroX
+            beginAtZero: is_BeginZeroX,
+            display: is_hideX
           }
         }],
         yAxes: [{
+          stacked: chartEl.stackY || false,
           gridLines: {
             display: true,
-            drawBorder: true,
+            drawBorder: is_hideY,
             drawOnChartArea: is_drawOnChartArea,
             position: 'left'
           },
           ticks: {
-            beginAtZero: is_BeginZeroY
+            beginAtZero: is_BeginZeroY,
+            display: is_hideY
           }
         }]
       }
