@@ -4,7 +4,7 @@
 
 ```bash
 # npm
-npm -i @0devco/chart 
+npm -i @0devco/chart
 # yarn
 yarn add @0devco/chart
 
@@ -12,12 +12,16 @@ yarn add @0devco/chart
 
 # implementation
 
+```html
+<canvas id="barChart" width="300" height="300"></canvas>
+```
+
 ```js
 /* import @0devco/chart */
 import chart from '@0devco/chart'
 /* chart component */
 let barChart = {
-  type:'pie',
+  type:'bar',
   id: 'barChart',
   multiple: 1,
   labels:['one','two','three'],
@@ -30,6 +34,10 @@ let barChart = {
 /* call function */
 chart().setup(barChart )
 ```
+
+# doc
+
+
 
 # courtesy
 
