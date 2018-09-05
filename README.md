@@ -1,6 +1,4 @@
-# chart
-JavaScript charting with @chartjs 0devco
-
+<p align="center" ><img src="https://raw.githubusercontent.com/0devco/chart/master/0devco-chart.png"></p>
 
 # implementation
 
@@ -22,3 +20,9 @@ let barChart = {
 /* call function */
 chart().setup(barChart )
 ```
+
+# courtesy
+
+* [chart.js](http://www.chartjs.org/)
+
+<a href="https://twitter.com/0devco" target="_blank" ><p align="center" ><img src="https://raw.githubusercontent.com/0devco/docs/master/.devco-images/logo-transparent.png"></p></a>
