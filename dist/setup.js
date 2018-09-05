@@ -17,15 +17,15 @@ module.exports = function setup(chartEl) {
     };
     datasetsArray.push(dataSet);
   }
-  let is_animated =  (chartEl.animated === false) ? 0 : 1500
-  let is_title = chartEl.title ? true : false
-  let is_legend = (chartEl.legend === false) ? false : true
-  let is_drawOnChartArea = (chartEl.drawOnChartArea === false) ? false :true
-  let is_tooltips = (chartEl.tooltips === false) ? false : true
-  let is_BeginZeroY = (chartEl.beginZeroY === true) ? true : false
-  let is_BeginZeroX = (chartEl.beginZeroX === true) ? true : false
-  let is_hideX = (chartEl.hideX === true) ? false : true
-  let is_hideY = (chartEl.hideY === true) ? false : true
+  var is_animated = chartEl.animated === false ? 0 : 1500;
+  var is_title = chartEl.title ? true : false;
+  var is_legend = chartEl.legend === false ? false : true;
+  var is_drawOnChartArea = chartEl.drawOnChartArea === false ? false : true;
+  var is_tooltips = chartEl.tooltips === false ? false : true;
+  var is_BeginZeroY = chartEl.beginZeroY === true ? true : false;
+  var is_BeginZeroX = chartEl.beginZeroX === true ? true : false;
+  var is_hideX = chartEl.hideX === true ? false : true;
+  var is_hideY = chartEl.hideY === true ? false : true;
 
   /* create chart */
   var chartID = document.getElementById(chartEl.id);
