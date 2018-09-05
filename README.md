@@ -37,7 +37,7 @@ chart().setup(barChart )
 
 # doc
 
-
+* <a href="https://github.com/0devco/chart/tree/master/docs" target="_blank" >doc</a>
 
 # courtesy
 
