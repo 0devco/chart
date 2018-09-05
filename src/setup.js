@@ -40,8 +40,8 @@ for (let i = 0; i < chartEl.multiple ; i++) {
         xAxes: [{
           gridLines: {
             display: true,
-					  drawBorder: true,
-					  drawOnChartArea: false,
+            drawBorder: true,
+	    drawOnChartArea: false,
             position: 'bottom'
           },
           ticks: {},
@@ -49,8 +49,8 @@ for (let i = 0; i < chartEl.multiple ; i++) {
         yAxes: [{
           gridLines: {
             display: true,
-					  drawBorder: true,
-					  drawOnChartArea: false,
+	    drawBorder: true,
+	    drawOnChartArea: false,
             position: 'left'
           },
           ticks: {},
