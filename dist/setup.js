@@ -17,7 +17,7 @@ module.exports = function setup(chartEl) {
   }
 
   /* create chart */
-  var chartID = document.getElementById(chart_el.id);
+  var chartID = document.getElementById(chartEl.id);
   var ctx = chartID.getContext("2d");
   var createChart = new Chart(ctx, {
     type: chartEl.type,

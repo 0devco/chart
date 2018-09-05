@@ -1,24 +1,24 @@
 'use strict';
+
 module.exports = function setup(chartEl) {
   /* import  chart js */
-  let Chart = require('chart.js')
+  var Chart = require('chart.js');
   /* chartEl data access by variable */
-  let datasetsArray = []
-  for (let i = 0; i < chartEl.multiple; i++) {
-    let dataSet = {
+  var datasetsArray = [];
+  for (var i = 0; i < chartEl.multiple; i++) {
+    var dataSet = {
       label: chartEl.label[i],
       data: chartEl.data[i],
       backgroundColor: chartEl.bgColor[i],
       borderColor: chartEl.bdrColor[i],
-      borderWidth: chartEl.bdrWidth[i],
-    }
-    datasetsArray.push(dataSet)
+      borderWidth: chartEl.bdrWidth[i]
+    };
+    datasetsArray.push(dataSet);
   }
 
-
   /* create chart */
-  let chartID = document.getElementById(chart_el.id);
-  var ctx = chartID.getContext("2d")
+  var chartID = document.getElementById(chartEl.id);
+  var ctx = chartID.getContext("2d");
   var createChart = new Chart(ctx, {
     type: chartEl.type,
     /* data part */
@@ -44,7 +44,7 @@ module.exports = function setup(chartEl) {
             drawOnChartArea: false,
             position: 'bottom'
           },
-          ticks: {},
+          ticks: {}
         }],
         yAxes: [{
           gridLines: {
@@ -53,9 +53,9 @@ module.exports = function setup(chartEl) {
             drawOnChartArea: false,
             position: 'left'
           },
-          ticks: {},
+          ticks: {}
         }]
       }
     }
-  })
+  });
 };
