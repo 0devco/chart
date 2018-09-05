@@ -4,7 +4,7 @@ module.exports = function setup(chartEl) {
   let Chart = require('chart.js')
   /* chartEl data access by variable */
   let datasetsArray = []
-  for (let i = 0; i < chartEl.multiple ; i++) {
+  for (let i = 0; i < chartEl.multiple; i++) {
     let dataSet = {
       label: chartEl.label[i],
       data: chartEl.data[i],
@@ -19,7 +19,7 @@ module.exports = function setup(chartEl) {
   /* create chart */
   let chartID = document.getElementById(chart_el.id);
   var ctx = chartID.getContext("2d")
-  var createChart = new Chart(ctx,{
+  var createChart = new Chart(ctx, {
     type: chartEl.type,
     /* data part */
     data: {
@@ -41,7 +41,7 @@ module.exports = function setup(chartEl) {
           gridLines: {
             display: true,
             drawBorder: true,
-	          drawOnChartArea: false,
+            drawOnChartArea: false,
             position: 'bottom'
           },
           ticks: {},
@@ -49,8 +49,8 @@ module.exports = function setup(chartEl) {
         yAxes: [{
           gridLines: {
             display: true,
-	          drawBorder: true,
-	          drawOnChartArea: false,
+            drawBorder: true,
+            drawOnChartArea: false,
             position: 'left'
           },
           ticks: {},
