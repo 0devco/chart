@@ -1,7 +1,10 @@
 'use strict';
 
 function Collection(collection) {
-  console.log(collection);
+  if(collection !== undefined){
+    console.log(collection)
+  }
+  console.log('@0devco/chart loaded');
 }
 
 Collection.prototype.setup = require('./setup');

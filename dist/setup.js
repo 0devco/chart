@@ -128,8 +128,9 @@ module.exports = function setup(chartEl) {
           ticks: {
             beginAtZero: is_BeginZeroX,
             display: is_hideX,
-            fontSize: 30,
-            fontColor: 'red'
+            fontSize: chartEl.fontSizeX || 17,
+            fontColor: chartEl.fontColorX || 'black',
+            fontFamily: chartEl.fontFamilyX
           }
         }],
         yAxes: [{
@@ -142,7 +143,10 @@ module.exports = function setup(chartEl) {
           },
           ticks: {
             beginAtZero: is_BeginZeroY,
-            display: is_hideY
+            display: is_hideY,
+            fontSize: chartEl.fontSizeY || 17,
+            fontColor: chartEl.fontColorY || 'black',
+            fontFamily: chartEl.fontFamilyY
           }
         }]
       }

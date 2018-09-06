@@ -3,29 +3,87 @@
 module.exports = function setup(chartEl) {
   /* import  chart js */
   var Chart = require('chart.js');
+
+  /* https://twitter.com/0devco */
+
   /* chartEl data access by variable */
   var datasetsArray = [];
   for (var i = 0; i < chartEl.multiple; i++) {
     var dataSet = {
       label: chartEl.label[i],
-      fill: chartEl.fill[i],
       data: chartEl.data[i],
-      borderDash: [chartEl.bdrDash[i]],
       backgroundColor: chartEl.bgColor[i],
       borderColor: chartEl.bdrColor[i],
-      borderWidth: chartEl.bdrWidth[i]
     };
     datasetsArray.push(dataSet);
   }
-  let is_animated =  (chartEl.animated === false) ? 0 : 1500
-  let is_title = chartEl.title ? true : false
-  let is_legend = (chartEl.legend === false) ? false : true
-  let is_drawOnChartArea = (chartEl.drawOnChartArea === false) ? false :true
-  let is_tooltips = (chartEl.tooltips === false) ? false : true
-  let is_BeginZeroY = (chartEl.beginZeroY === true) ? true : false
-  let is_BeginZeroX = (chartEl.beginZeroX === true) ? true : false
-  let is_hideX = (chartEl.hideX === true) ? false : true
-  let is_hideY = (chartEl.hideY === true) ? false : true
+  datasetsArray.forEach((d, index) => {
+    /* fill flag */
+    if (chartEl.fill !== undefined) {
+      d['fill'] = (chartEl.fill[index] !== undefined) ? chartEl.fill[index] : true
+    }
+    /* border dash */
+    if (chartEl.bdrDash !== undefined) {
+      d['borderDash'] = (chartEl.bdrDash[index] !== undefined) ? [chartEl.bdrDash[index]] : [0]
+    }
+    /* border width */
+    if (chartEl.bdrWidth !== undefined) {
+      d['borderWidth'] = (chartEl.bdrWidth[index] !== undefined) ? chartEl.bdrWidth[index] : 1
+    }
+    /* tension (curve style)*/
+    if (chartEl.tension !== undefined) {
+      d['tension'] = (chartEl.tension[index] !== undefined) ? chartEl.tension[index] : 0.4
+    }
+    /* line step style */
+    if (chartEl.stepLine !== undefined) {
+      d['steppedLine'] = (chartEl.stepLine[index] !== undefined) ? chartEl.stepLine[index] : false
+    }
+
+
+    /* pointBackgroundColor */
+    if (chartEl.pointBg !== undefined) {
+      d['pointBackgroundColor'] = (chartEl.pointBg[index] !== undefined) ? chartEl.pointBg[index] : chartEl.pointBg[0]
+    }
+    /* pointRadius */
+
+    if (chartEl.pointRd !== undefined) {
+      d['pointRadius'] = (chartEl.pointRd[index] !== undefined) ? chartEl.pointRd[index] : chartEl.pointRd[0]
+    }
+    /* pointBorderWidth */
+    if (chartEl.pointBdrWd !== undefined) {
+      d['pointBorderWidth'] = (chartEl.pointBdrWd[index] !== undefined) ? chartEl.pointBdrWd[index] : chartEl.pointBdrWd[0]
+    }
+    if (chartEl.pointBdrColor !== undefined) {
+      d['pointBorderColor'] = (chartEl.pointBdrColor[index] !== undefined) ? chartEl.pointBdrColor[index] : chartEl.pointBdrColor[0]
+    }
+    /* point hover radius */
+    if (chartEl.pointHvRd !== undefined) {
+      d['pointHoverRadius'] = (chartEl.pointHvRd[index] !== undefined) ? chartEl.pointHvRd[index] : chartEl.pointHvRd[0]
+    }
+    /* pointHoverBackgroundColor */
+    if (chartEl.pointHvBg !== undefined) {
+      d['pointHoverBackgroundColor'] = (chartEl.pointHvBg[index] !== undefined) ? chartEl.pointHvBg[index] : chartEl.pointHvBg[0]
+    }
+    /* pointHoverBorderColor */
+    if (chartEl.pointHvBdrColor !== undefined) {
+      d['pointHoverBorderColor'] = (chartEl.pointHvBdrColor[index] !== undefined) ? chartEl.pointHvBdrColor[index] : chartEl.pointHvBdrColor[0]
+    }
+    /* point style */
+    if (chartEl.pointStyle !== undefined) {
+      d['pointStyle'] = (chartEl.pointStyle[index] !== undefined) ? chartEl.pointStyle[index] : chartEl.pointStyle[0]
+    }
+  })
+  var is_animated = chartEl.animated === false ? 0 : 1500;
+  var is_title = chartEl.title ? true : false;
+  var is_legend = chartEl.legend === false ? false : true;
+  var is_drawOnChartArea = chartEl.drawOnChartArea === false ? false : true;
+  var is_tooltips = chartEl.tooltips === false ? false : true;
+  var is_hover = chartEl.tooltips === false ? 'null' : 'point';
+  var is_BeginZeroY = chartEl.beginZeroY === true ? true : false;
+  var is_BeginZeroX = chartEl.beginZeroX === true ? true : false;
+  var is_hideX = chartEl.hideX === true ? false : true;
+  var is_hideY = chartEl.hideY === true ? false : true;
+
 
   /* create chart */
   var chartID = document.getElementById(chartEl.id);
@@ -49,7 +107,11 @@ module.exports = function setup(chartEl) {
         text: chartEl.title
       },
       tooltips: {
-        enabled: is_tooltips
+        enabled: is_tooltips,
+        // backgroundColor: 'red'
+      },
+      hover: {
+        mode: is_hover
       },
       animation: {
         duration: is_animated
@@ -58,27 +120,33 @@ module.exports = function setup(chartEl) {
         xAxes: [{
           stacked: chartEl.stackX || false,
           gridLines: {
-            display: true,
+            display: is_hideX,
             drawBorder: is_hideX,
             drawOnChartArea: is_drawOnChartArea,
             position: 'bottom'
           },
           ticks: {
             beginAtZero: is_BeginZeroX,
-            display: is_hideX
+            display: is_hideX,
+            fontSize: chartEl.fontSizeX || 17,
+            fontColor: chartEl.fontColorX || 'black',
+            fontFamily: chartEl.fontFamilyX
           }
         }],
         yAxes: [{
           stacked: chartEl.stackY || false,
           gridLines: {
-            display: true,
+            display: is_hideY,
             drawBorder: is_hideY,
             drawOnChartArea: is_drawOnChartArea,
             position: 'left'
           },
           ticks: {
             beginAtZero: is_BeginZeroY,
-            display: is_hideY
+            display: is_hideY,
+            fontSize: chartEl.fontSizeY || 17,
+            fontColor: chartEl.fontColorY || 'black',
+            fontFamily: chartEl.fontFamilyY
           }
         }]
       }
