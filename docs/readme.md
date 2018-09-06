@@ -78,6 +78,12 @@ fontColorX: string
 fontColorY: string
 fontFamilyX: string
 fontFamilyY: string
+tooltipsBg: string
+tooltipsFontSize: number
+tooltipsFontColor: string
+tooltipsFontFamily: string
+tooltipsXpad: number
+tooltipsYpad: number
 ```
 
 

@@ -108,7 +108,12 @@ module.exports = function setup(chartEl) {
       },
       tooltips: {
         enabled: is_tooltips,
-        // backgroundColor: 'red'
+        backgroundColor: chartEl.tooltipsBg,
+        bodyFontSize: chartEl.tooltipsFontSize,
+        bodyFontColor: chartEl.tooltipsFontColor,
+        bodyFontFamily: chartEl.tooltipsFontFamily,
+        xPadding: chartEl.tooltipsXpad || 10,
+        yPaading: chartEl.tooltipsYpad || 10,
       },
       hover: {
         mode: is_hover
