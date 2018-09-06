@@ -72,6 +72,12 @@ pointStyle: [multi n]
 pointBdrWd: [multi n]
 pointBdrColor: [multi n]
 pointHvBdrColor: [multi n]
+fontSizeX: number
+fontSizeY: number
+fontColorX: string
+fontColorY: string
+fontFamilyX: string
+fontFamilyY: string
 ```
 
 
