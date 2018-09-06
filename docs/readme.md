@@ -38,12 +38,10 @@ id: 'canvas_id',
 type: 'chart_type',
 multiple: 2 /* multi chart n */
 labels: array
-fill: multi array according  (multiple n) ex => [true,false]
 label: multi array according  (multiple n)
 data: multi array according  (multiple n)
 bgColor: multi array according  (multiple n)
 bdrColor: multi array according  (multiple n)
-bdrDash: [0,0] multi array according  (multiple n)
 ```
 
 # extra rules
@@ -60,7 +58,12 @@ beginZeroY: true,
 hideX: true,
 hideY: true,
 stackX: true,
-stackY: true
+stackY: true,
+bdrDash: [0,0] multi array according  (multiple n),
+fill: multi array according  (multiple n) ex => [true,false],
+bdrWidth: multi array according  (multiple n)
+tension: multi array according  (multiple n) => ex = [false,0.4] => 0.4 means true
+stepLine: multi array according  (multiple n) => ex = [true,false]
 ```
 
 
