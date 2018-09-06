@@ -64,6 +64,14 @@ fill: multi array according  (multiple n) ex => [true,false],
 bdrWidth: multi array according  (multiple n)
 tension: multi array according  (multiple n) => ex = [false,0.4] => 0.4 means true
 stepLine: multi array according  (multiple n) => ex = [true,false]
+pointBg: [multi n]
+pointRd: [multi n]
+pointHvRd: [multi n]
+pointHvBg: [multi n]
+pointStyle: [multi n]
+pointBdrWd: [multi n]
+pointBdrColor: [multi n]
+pointHvBdrColor: [multi n]
 ```
 
 
