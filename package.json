@@ -1,6 +1,6 @@
 {
   "name": "@0devco/chart",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "0devco javascript data charting with chartjs",
   "main": "dist/index.js",
   "scripts": {

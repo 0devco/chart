@@ -1,8 +1,8 @@
 'use strict';
 
 function Collection(collection) {
-  if(collection !== undefined){
-    console.log(collection)
+  if (collection !== undefined) {
+    console.log(collection);
   }
   console.log('@0devco/chart loaded');
 }
